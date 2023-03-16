@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebCampBackendNew</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <h1>Books</h1>
+      <table>
+      <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+　　  </tr>
+　　  <tr>
+　　  <td>リーダブルコード</td>
+　　  <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
+　　  <td><a href="books/136633">show</a></td>
+　　  <td><a href="books/136633/edit">edit</a></td>
+　　  <td><a href="destroy">destroy</a></td>
+　　  </tr>
+　　  <tr>
+　　  <td>トラブル知らずのシステム設計</td>
+　　  <td>システム設計の要点を図解で説明してくれます</td>
+　　  <td><a href="books/136634">show</a></td>
+　　  <td><a href="books/136634/edit">edit</a></td>
+　　  <td><a href="destroy">destroy</a></td>
+　　  </tr>
+　　  <tr>
+　　  <td>たのしいRuby</td>
+　　  <td>Rubyの入門におすすめです</td>
+　　  <td><a href="books/136635">show</a></td>
+　　  <td><a href="books/136635/edit">edit</a></td>
+　　  <td><a href="destroy">destroy</a></td>
+　　  </tr>
+　　  <tr>
+　　  <td>入門Git</td>
+　　  <td>gitについての基本操作から内部構造まで解説してくれます</td>
+　　  <td><a href="books/136636">show</a></td>
+　　  <td><a href="books/136636/edit">edit</a></td>
+　　  <td><a href="destroy">destroy</a></td>
+　　  </tr>
+　　  <tr>
+　　  <td>アルゴリズム図鑑</td>
+　　  <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
+　　  <td><a href="books/136637">show</a></td>
+　　  <td><a href="books/136637/edit">edit</a></td>
+　　  <td><a href="destroy">destroy</a></td>
+　　  </tr>
+　　  <tr>
+　　  <td>達人プログラマー</td>
+　　  <td>プログラマ入門者は必読！</td>
+　　  <td><a href="books/136638">show</a></td>
+　　  <td><a href="books/136638/edit">edit</a></td>
+　　  <td><a href="destroy">destroy</a></td>
+　　  </tr>
+　　  <tr>
+　　  <td>データベース実践入門</td>
+　　  <td>効率的なSQL文を教えてくれます</td>
+　　  <td><a href="books/136639">show</a></td>
+　　  <td><a href="books/136639/edit">edit</a></td>
+　　  <td><a href="destroy">destroy</a></td>
+　　  </tr>
+</table>
+      
+      <h2>New Book</h2>
+      <!-- form_with部分 -->
+      <%= form_with model: ＠book,url:books_path, method: :post do |f| %>
+      <div class="title">
+        Title<br>
+        <%= f.text_field :title %>
+      </div>
+      <div class="body">
+         Body<br>
+         <%= f.text_area :body %>
+      </div>
+      <div class="submit">
+         <%= f.submit 'Create Book' %>
+      </div>
+      <% end %>
+  </body>
